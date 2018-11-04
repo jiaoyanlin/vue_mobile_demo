@@ -1,49 +1,82 @@
 <template>
     <div class="edit">
-        <h2>edit</h2>
-        <div class="test">mytest:{{mytest}}</div>
-        <div>
-            <input type="text" v-model="val">
-            <span @click="changeMytest1">set(mutations)</span>
-            <span @click="changeMytest2">set(actions)</span>
+        <div class="item">
+            标题：<input class="title" type="text" v-model="title">
+        </div>
+        <div class="item">
+            内容：<textarea class="content" v-model="content"></textarea>
+        </div>
+        <div class="item">
+            <div class="btn" @click="onSave">保存</div>
         </div>
     </div>
 </template>
 
 <script>
-import {mapGetters, mapMutations, mapActions} from 'vuex';
+import {mapActions} from 'vuex';
 export default {
     name: 'Edit',
     data() {
         return {
-            val: ''
+            title: '',
+            content: '',
         };
     },
     computed: {
-        ...mapGetters([
-            'mytest'
-        ])
     },
     methods: {
-        ...mapMutations({
-            setMytestMut: 'SET_MYTEST'
-        }),
         ...mapActions([
-            'setMytest'
+            'setListAdd'
         ]),
-        changeMytest1() {
-            this.setMytestMut(this.val)
-        },
-        changeMytest2() {
-            this.setMytest({
-                mytest: this.val
-            })
+        onSave() {
+            if (!this.title) {
+                alert('请输入标题');
+                return false;
+            }
+            if (!this.content) {
+                alert('请输入内容');
+                return false;
+            }
+            this.setListAdd({
+                title: this.title,
+                content: this.content,
+                time: +new Date(),
+            });
+            alert('保存成功');
+            this.title = '';
+            this.content = '';
         },
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+.edit {
+    .item {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
 
+    .title {
+        width: 320px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .content {
+        width: 320px;
+        height: 200px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        padding: 5px 20px;
+        border-radius: 8px;
+        background: #ddd;
+        cursor: pointer;
+    }
+}
 </style>

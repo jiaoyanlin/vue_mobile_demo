@@ -1,5 +1,5 @@
 const state = {
-    mytest: 'this is test-1'
+    list: [],
 };
 
 export default state;

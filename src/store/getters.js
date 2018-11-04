@@ -1,3 +1,3 @@
-export const mytest = (state) => {
-    return state.mytest;
+export const list = (state) => {
+    return state.list;
 }

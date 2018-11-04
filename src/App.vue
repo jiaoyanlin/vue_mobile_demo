@@ -17,8 +17,24 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
 export default {
-    name: 'App'
+    name: 'App',
+    data() {
+        return {
+        }
+    },
+    computed: {
+    },
+    methods: {
+        ...mapActions([
+            'setList'
+        ]),
+    },
+    created() {
+        let list = JSON.parse(localStorage.getItem('list') || '[]');
+        this.setList(list);
+    },
 };
 </script>
 
