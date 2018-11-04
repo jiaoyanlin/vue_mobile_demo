@@ -29,5 +29,7 @@ module.exports = {
         "semi": [0],
         // 函数定义时括号前面要不要有空格
         "space-before-function-paren": [0, "always"],
+        //定义数组或对象最后多余的逗号
+		"comma-dangle": [0, "never"],
     }
 };

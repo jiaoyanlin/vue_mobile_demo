@@ -29,12 +29,14 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    width: 500px;
+    height: 600px;
+    margin: 30px auto;
+    border: 1px solid #eee;
 }
 
 .header {
     display: flex;
-    max-width: 500px;
     height: 50px;
     line-height: 50px;
     margin: 0 auto;
