@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -39,15 +39,15 @@ export default {
     line-height: 50px;
     margin: 0 auto;
     background: #eee;
-}
 
-.header .item {
-    flex: 1;
-    cursor: pointer;
-}
+    .item {
+        flex: 1;
+        cursor: pointer;
 
-.header .item.router-link-active {
-    background: #ddd;
-    color: #0a0;
+        &.router-link-active {
+            background: #ddd;
+            color: #0a0;
+        }
+    }
 }
 </style>

@@ -23,7 +23,7 @@ module.exports = {
         'generator-star-spacing': 'off',
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        //空格标准这里是2个空格为标准 可以写4,tab
+        // 空格标准这里是2个空格为标准 可以写4,tab
         indent: ['error', 4],
         // 关闭语句强制分号结尾
         "semi": [0],
