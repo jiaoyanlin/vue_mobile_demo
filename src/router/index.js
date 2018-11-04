@@ -1,15 +1,32 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
+import Edit from '@/views/Edit';
+import List from '@/views/List';
+import Star from '@/views/Star';
 
 Vue.use(Router);
 
 export default new Router({
     routes: [
         {
+            // 默认跳转到 edit
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            redirect: '/edit'
+        },
+        {
+            path: '/edit',
+            name: 'edit',
+            component: Edit
+        },
+        {
+            path: '/list',
+            name: 'list',
+            component: List
+        },
+        {
+            path: '/star',
+            name: 'star',
+            component: Star
         }
     ]
 });
