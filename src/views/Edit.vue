@@ -7,7 +7,7 @@
             内容：<textarea class="content" v-model="content"></textarea>
         </div>
         <div class="item">
-            <div class="btn" @click="onSave">保存</div>
+            <a-button type="primary" @click="onSave">保存</a-button>
         </div>
     </div>
 </template>
